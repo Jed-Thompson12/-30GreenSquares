@@ -50,6 +50,88 @@ For 30 days, I'm challenging myself to make at least one **meaningful GitHub con
 |  29 | —               | —                                |    ⬜   |
 |  30 | —               | —                                |    ⬜   |
 
+## 🗓️ 30-Day Plan
+
+The challenge will be split between **building projects, improving existing projects, and creating smaller experiments**.
+
+The aim is to make every day's contribution meaningful while keeping the challenge interesting.
+
+### Week 1 — Start Strong
+
+**Days 1–7**
+
+* Set up the #30GreenSquares repository
+* Improve this README
+* Create or improve a small project
+* Work on **Spacebar Clicker**
+* Add a new feature or improve its interface
+* Start **Joogle Tools**
+* Build a small utility or experiment
+
+**Goal:** Establish the daily habit and get several projects moving.
+
+### Week 2 — Build
+
+**Days 8–14**
+
+* Continue developing **Spacebar Clicker**
+* Add new gameplay features
+* Build more tools for **Joogle Tools**
+* Experiment with JavaScript
+* Improve project documentation
+* Create a small standalone project
+* Review the first two weeks and clean up code
+
+**Goal:** Have several projects that are noticeably more developed than when the challenge started.
+
+### Week 3 — Experiment
+
+**Days 15–21**
+
+* Add a larger feature to one of my projects
+* Experiment with Python
+* Build a useful web utility
+* Improve the UI of an existing project
+* Learn and use something new
+* Fix bugs and refactor older code
+* Update READMEs and project documentation
+
+**Goal:** Learn something new while continuing to build.
+
+### Week 4 — Polish
+
+**Days 22–28**
+
+* Finish unfinished features
+* Fix bugs
+* Improve performance
+* Improve accessibility and mobile support
+* Add statistics or other useful features
+* Polish project interfaces
+* Create one final mini-project or experiment
+
+**Goal:** Turn the projects from experiments into things I'm actually proud of.
+
+### Final 2 Days — Finish
+
+**Day 29**
+
+* Review all projects
+* Clean up repositories
+* Improve documentation
+* Update project descriptions
+* Make sure unfinished work is clearly documented
+
+**Day 30**
+
+* Complete the final contribution
+* Update the progress table
+* Review everything built during the challenge
+* Record what I learned
+* Decide which projects I want to continue
+
+**Goal:** Finish with 30 consecutive days of meaningful contributions.
+
 ## 🚀 Projects
 
 Some of the projects I may work on during the challenge:
@@ -58,6 +140,8 @@ Some of the projects I may work on during the challenge:
 * **Joogle Tools** — A collection of useful web utilities
 * **Joogle Dashboard** — A personal dashboard
 * **Mini Projects** — Small experiments and one-off projects
+
+Projects may change throughout the challenge as new ideas come up.
 
 ## 🛠️ Technologies
 
@@ -72,6 +156,8 @@ Technologies I may use during the challenge include:
 * Git
 * GitHub
 
+I may also learn and experiment with new technologies during the challenge.
+
 ## 📈 The Rules
 
 1. Make at least one meaningful contribution each day.
@@ -79,7 +165,8 @@ Technologies I may use during the challenge include:
 3. No meaningless commit spam just to make the graph green.
 4. Missing a day doesn't mean the challenge is over — keep going.
 5. Try to learn or build something new whenever possible.
-6. Have fun!
+6. Projects and plans can change as new ideas come up.
+7. Have fun!
 
 ## 🏁 Final Goal
 
