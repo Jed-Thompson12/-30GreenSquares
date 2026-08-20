@@ -55,7 +55,6 @@ For 30 days, I'm challenging myself to make at least one **meaningful GitHub con
 Some of the projects I may work on during the challenge:
 
 * **Spacebar Clicker** — A browser-based clicking game
-* **HamHub** — Tools and resources for ham-radio enthusiasts
 * **Joogle Tools** — A collection of useful web utilities
 * **Joogle Dashboard** — A personal dashboard
 * **Mini Projects** — Small experiments and one-off projects
