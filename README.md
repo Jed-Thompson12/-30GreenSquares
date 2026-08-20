@@ -20,7 +20,7 @@ For 30 days, I'm challenging myself to make at least one **meaningful GitHub con
 | Day | Project         | What I Did                       | Status |
 | --: | --------------- | -------------------------------- | :----: |
 |   1 | #30GreenSquares | Created the challenge repository |   🟢   |
-|   2 | Improve this README| —                                |    🟢   |
+|   2 | Improve this README| Improved the README                                |    🟢   |
 |   3 | —               | —                                |    ⬜   |
 |   4 | —               | —                                |    ⬜   |
 |   5 | —               | —                                |    ⬜   |
