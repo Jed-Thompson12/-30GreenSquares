@@ -22,7 +22,7 @@ For 30 days, I'm challenging myself to make at least one **meaningful GitHub con
 |   1 | #30GreenSquares | Created the challenge repository |   🟢   |
 |   2 | Improve this README| Improved the README                                |    🟢   |
 |   3 | Daily Dashboard              | Created a Daily brief thing with Claude                               |    🟢   |
-|   4 | Spacebar Clicker             | Made on a **Spacebar Clicker**                                |    🟢   |
+|   4 | Spacebar Clicker             | Made a **Spacebar Clicker**                                |    🟢   |
 |   5 | —               | —                                |    ⬜   |
 |   6 | —               | —                                |    ⬜   |
 |   7 | —               | —                                |    ⬜   |
