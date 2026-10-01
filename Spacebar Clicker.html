@@ -2,88 +2,388 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Spacebar Clicker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Spacebar Clicker</title>
     <style>
+        :root {
+            --primary: #00ffcc;
+            --primary-dark: #00b38f;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #1a1a1a;
-            color: #ffffff;
-            margin-top: 100px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            user-select: none;
         }
-        #counter {
-            font-size: 80px;
-            font-weight: bold;
-            color: #00ffcc;
-            margin: 20px;
+
+        .game-container {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #333;
         }
-        .button {
-            background-color: #333;
-            color: white;
-            border: 2px solid #00ffcc;
-            padding: 15px 30px;
-            font-size: 20px;
-            cursor: pointer;
-            border-radius: 8px;
-            margin: 10px;
+
+        @media (max-width: 768px) {
+            .game-container {
+                grid-template-columns: 1fr;
+            }
         }
-        .button:hover {
-            background-color: #00ffcc;
-            color: #1a1a1a;
+
+        /* Left Side: Clicker Area */
+        .clicker-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-right: 1px solid #333;
+            padding-right: 20px;
         }
+
+        @media (max-width: 768px) {
+            .clicker-section {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid #333;
+                padding-bottom: 20px;
+            }
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        .score-display {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 10px 0;
+            color: var(--text-main);
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .stats-row strong {
+            color: var(--primary);
+        }
+
         #spacebar-visual {
-            display: inline-block;
-            background-color: #444;
-            border: 3px solid #777;
-            padding: 20px 100px;
-            font-size: 24px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0px 5px 0px #222;
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+            height: 90px;
+            background: #333;
+            border: 4px solid #555;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            box-shadow: 0 8px 0 #1a1a1a, 0 15px 20px rgba(0,0,0,0.4);
+            transition: all 0.05s ease;
         }
-        #spacebar-visual.active {
-            background-color: #00ffcc;
-            color: #1a1a1a;
-            transform: translateY(4px);
-            box-shadow: 0px 1px 0px #222;
+
+        #spacebar-visual:active, #spacebar-visual.active {
+            transform: translateY(6px);
+            background: var(--primary);
+            border-color: #fff;
+            color: #000;
+            box-shadow: 0 2px 0 #1a1a1a, 0 5px 10px rgba(0, 255, 204, 0.4);
+        }
+
+        /* Floating Particle Effects */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+            animation: floatUp 0.6s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -150%) scale(0.6); opacity: 0; }
+        }
+
+        /* Right Side: Upgrades Shop */
+        .shop-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .shop-title {
+            font-size: 1.5rem;
+            margin: 0 0 20px 0;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .shop-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-height: 450px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        /* Custom Scrollbar for Shop */
+        .shop-list::-webkit-scrollbar { width: 6px; }
+        .shop-list::-webkit-scrollbar-track { background: #1a1a1a; }
+        .shop-list::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+        .shop-list::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        .upgrade-card {
+            background: #252525;
+            border: 1px solid #383838;
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .upgrade-card:hover {
+            transform: translateX(3px);
+            border-color: var(--primary);
+        }
+
+        .upgrade-card.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: #333 !important;
+            transform: none !important;
+        }
+
+        .upgrade-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .upgrade-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .upgrade-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .upgrade-cost {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .upgrade-count {
+            background: #121212;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 1px solid #333;
         }
     </style>
 </head>
 <body>
 
-    <h1>Spacebar Clicker</h1>
-    <p>Press the <strong>Spacebar</strong> or click the button below!</p>
-    
-    <div id="counter">0</div>
-    
-    <button class="button" onclick="incrementScore()">Click Me!</button>
-    <br>
-    <div id="spacebar-visual">SPACE</div>
+    <div class="game-container">
+        
+        <!-- Left Column: Interaction Box -->
+        <div class="clicker-section" id="click-zone">
+            <h1>Spacebar Clicker</h1>
+            <div class="score-display" id="score-val">0</div>
+            
+            <div class="stats-row">
+                <div>DPC (Click Power): <strong id="dpc-val">1</strong></div>
+                <div>DPS (Auto Income): <strong id="dps-val">0</strong></div>
+            </div>
+
+            <div id="spacebar-visual">SPACEBAR</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 25px;">
+                Press physical <strong>Spacebar</strong> or click the button!
+            </p>
+        </div>
+
+        <!-- Right Column: Shop Items -->
+        <div class="shop-section">
+            <div class="shop-title">Upgrades & Equipment</div>
+            <div class="shop-list" id="shop-container">
+                <!-- Cards get loaded via Javascript dynamically -->
+            </div>
+        </div>
+
+    </div>
 
     <script>
+        // Core Game Variables
         let score = 0;
-        const counterDisplay = document.getElementById('counter');
-        const visualKey = document.getElementById('spacebar-visual');
+        let dpc = 1; // Damage Per Click (Points per click)
+        let dps = 0; // Damage Per Second (Passive generation)
 
-        function incrementScore() {
-            score++;
-            counterDisplay.textContent = score;
-            
-            // Trigger visual press effect
-            visualKey.classList.add('active');
-            setTimeout(() => {
-                visualKey.classList.remove('active');
-            }, 100);
+        // Shop Items Configurations
+        const upgrades = [
+            { id: 'heavy_boots', name: 'Heavy Boots', cost: 15, baseCost: 15, count: 0, dpcValue: 1, dpsValue: 0, desc: '+1 Point per click' },
+            { id: 'mechanical_switch', name: 'Cherry MX Switches', cost: 100, baseCost: 100, count: 0, dpcValue: 5, dpsValue: 0, desc: '+5 Points per click' },
+            { id: 'space_bot', name: 'Auto-Tapping Bot', cost: 50, baseCost: 50, count: 0, dpcValue: 0, dpsValue: 1, desc: '+1 Point automatically every second' },
+            { id: 'macro_script', name: 'Python Click Script', cost: 400, baseCost: 400, count: 0, dpcValue: 0, dpsValue: 8, desc: '+8 Points automatically every second' },
+            { id: 'quantum_keyboard', name: 'Quantum Matrix Key', cost: 2500, baseCost: 2500, count: 0, dpcValue: 50, dpsValue: 120, desc: 'Huge hybrid click/passive dynamic boosts' }
+        ];
+
+        // Cache DOM Elements
+        const scoreVal = document.getElementById('score-val');
+        const dpcVal = document.getElementById('dpc-val');
+        const dpsVal = document.getElementById('dps-val');
+        const spaceKey = document.getElementById('spacebar-visual');
+        const clickZone = document.getElementById('click-zone');
+        const shopContainer = document.getElementById('shop-container');
+
+        // Initial setup
+        function initShop() {
+            shopContainer.innerHTML = '';
+            upgrades.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'upgrade-card disabled';
+                card.id = `upgrade-${item.id}`;
+                card.onclick = () => buyUpgrade(index);
+                
+                card.innerHTML = `
+                    <div class="upgrade-info">
+                        <div class="upgrade-name">${item.name}</div>
+                        <div class="upgrade-desc">${item.desc}</div>
+                        <div class="upgrade-cost">Cost: ${item.cost}</div>
+                    </div>
+                    <div class="upgrade-count" id="count-${item.id}">0</div>
+                `;
+                shopContainer.appendChild(card);
+            });
+            updateUI();
         }
 
-        // Listen for spacebar press
-        window.addEventListener('keydown', function(event) {
-            if (event.code === 'Space') {
-                event.preventDefault(); // Prevents page from scrolling down
-                incrementScore();
-            }
-        });
-    </script>
+        // Handle Point Accumulation (Clicking)
+        function registerClick() {
+            score += dpc;
+            createParticle(`+${dpc}`);
+            updateUI();
+        }
 
-</body>
-</html>
+        // Spawn visual text popup dynamically
+        function createParticle(text) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';particle.textContent = text;
+// Random positioning over the visual spacebar
+const rect = spaceKey.getBoundingClientRect();
+const zoneRect = clickZone.getBoundingClientRect();
+const x = rect.left - zoneRect.left + (Math.random() * rect.width);
+const y = rect.top - zoneRect.top + (Math.random() * 20);
+particle.style.left = ${x}px;
+particle.style.top = ${y}px;
+clickZone.appendChild(particle);
+// Cleanup elements once complete
+setTimeout(() => {
+particle.remove();
+}, 600);
+}
+// Buy System Logic
+function buyUpgrade(index) {
+const item = upgrades[index];
+if (score >= item.cost) {
+score -= item.cost;
+item.count++;
+// Scale Costs exponentially (standard idle game design multiplier)
+item.cost = Math.round(item.baseCost * Math.pow(1.15, item.count));
+// recalculate aggregate assets
+recalcStats();
+updateUI();
+}
+}
+function recalcStats() {
+dpc = 1;
+dps = 0;
+upgrades.forEach(item => {
+dpc += (item.count * item.dpcValue);
+dps += (item.count * item.dpsValue);
+});
+}
+// Update Interface State
+function updateUI() {
+scoreVal.textContent = Math.floor(score).toLocaleString();
+dpcVal.textContent = dpc.toLocaleString();
+dpsVal.textContent = dps.toLocaleString();
+// Check availability state adjustments for buttons dynamically
+upgrades.forEach(item => {
+const card = document.getElementById(upgrade-${item.id});
+const countBadge = document.getElementById(count-${item.id});
+const costLabel = card.querySelector('.upgrade-cost');
+countBadge.textContent = item.count;
+costLabel.textContent = Cost: ${item.cost.toLocaleString()};
+if (score >= item.cost) {
+card.classList.remove('disabled');
+} else {
+card.classList.add('disabled');
+}
+});
+}
+// Key bindings and Listeners
+window.addEventListener('keydown', (e) => {
+if (e.code === 'Space') {
+e.preventDefault(); // Stop native page layout shifts or downward scrolls
+if (!spaceKey.classList.contains('active')) {
+spaceKey.classList.add('active');
+registerClick();
+}
+}
+});
+window.addEventListener('keyup', (e) => {
+if (e.code === 'Space') {
+spaceKey.classList.remove('active');
+}
+});
+// Fallback Mouse click support for visual canvas key
+spaceKey.addEventListener('mousedown', () => {
+registerClick();
+});
+// Core Game loops (Run passive interval changes at 10Hz/100ms for responsiveness)
+setInterval(() => {
+if (dps > 0) {
+score += (dps / 10);
+updateUI();
+}
+}, 100);
+// Build shop elements upon instantiation
+initShop();
