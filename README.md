@@ -1,10 +1,14 @@
-# #30GreenSquares
+# 🟩 #30GreenSquares
 
 > **30 days. 30 green squares. A whole lot of building.**
 
 Welcome to my **#30GreenSquares** challenge!
 
-For 30 days, I'm challenging myself to make at least one **meaningful GitHub contribution every day**. The goal isn't just to make my contribution graph green — it's to build projects, learn new things, experiment, and become a better developer along the way.
+For 30 days, I'm challenging myself to make at least one **meaningful GitHub contribution every day**.
+
+The goal isn't just to make my contribution graph green. It's about **building projects, learning new things, experimenting with ideas, improving existing work, and becoming a better developer along the way.**
+
+---
 
 ## 🎯 The Goal
 
@@ -15,68 +19,76 @@ For 30 days, I'm challenging myself to make at least one **meaningful GitHub con
 * [ ] Keep my GitHub activity consistent
 * [ ] Finish the challenge with 30 green squares
 
+---
+
 ## 📅 Progress
 
-| Day | Project         | What I Did                       | Status |
-| --: | --------------- | -------------------------------- | :----: |
-|   1 | #30GreenSquares | Created the challenge repository |   🟢   |
-|   2 | Improve this README| Improved the README                                |    🟢   |
-|   3 | Daily Dashboard              | Created a Daily brief thing with Claude                               |    🟢   |
-|   4 | Spacebar Clicker             | Made a **Spacebar Clicker**                                |    🟢   |
-|   4.5 | Refactor Spacebar Clicker to Super Spacebar Clicker               | Updated the title and styles for the Spacebar Clicker game, enhancing the layout and visual elements.                                |    🟢   |
-|   5 | Joogle Music               | Created Joogle Music                                |    🟢   |
-|   5.5 | Joogle Musicx               | Created Joogle Musicx                                |    🟢   |
-|   8 | —               | —                                |    ⬜   |
-|   9 | —               | —                                |    ⬜   |
-|  10 | —               | —                                |    ⬜   |
-|  11 | —               | —                                |    ⬜   |
-|  12 | —               | —                                |    ⬜   |
-|  13 | —               | —                                |    ⬜   |
-|  14 | —               | —                                |    ⬜   |
-|  15 | —               | —                                |    ⬜   |
-|  16 | —               | —                                |    ⬜   |
-|  17 | —               | —                                |    ⬜   |
-|  18 | —               | —                                |    ⬜   |
-|  19 | —               | —                                |    ⬜   |
-|  20 | —               | —                                |    ⬜   |
-|  21 | —               | —                                |    ⬜   |
-|  22 | —               | —                                |    ⬜   |
-|  23 | —               | —                                |    ⬜   |
-|  24 | —               | —                                |    ⬜   |
-|  25 | —               | —                                |    ⬜   |
-|  26 | —               | —                                |    ⬜   |
-|  27 | —               | —                                |    ⬜   |
-|  28 | —               | —                                |    ⬜   |
-|  29 | —               | —                                |    ⬜   |
-|  30 | —               | —                                |    ⬜   |
+| Day | Project                    | What I Did                                                                               | Status |
+| --: | -------------------------- | ---------------------------------------------------------------------------------------- | :----: |
+|   1 | **#30GreenSquares**        | Created the challenge repository                                                         |   🟢   |
+|   2 | **README**                 | Improved and formatted the README                                                        |   🟢   |
+|   3 | **Daily Dashboard**        | Created a daily briefing dashboard with Claude                                           |   🟢   |
+|   4 | **Spacebar Clicker**       | Created the Spacebar Clicker game                                                        |   🟢   |
+|   5 | **Super Spacebar Clicker** | Refactored Spacebar Clicker and improved its title, styling, layout, and visual elements |   🟢   |
+|   6 | **Joogle Music**           | Created Joogle Music                                                                     |   🟢   |
+|   7 | **Joogle Musicx**          | Created Joogle Musicx                                                                    |   🟢   |
+|   8 | —                          | —                                                                                        |    ⬜   |
+|   9 | —                          | —                                                                                        |    ⬜   |
+|  10 | —                          | —                                                                                        |    ⬜   |
+|  11 | —                          | —                                                                                        |    ⬜   |
+|  12 | —                          | —                                                                                        |    ⬜   |
+|  13 | —                          | —                                                                                        |    ⬜   |
+|  14 | —                          | —                                                                                        |    ⬜   |
+|  15 | —                          | —                                                                                        |    ⬜   |
+|  16 | —                          | —                                                                                        |    ⬜   |
+|  17 | —                          | —                                                                                        |    ⬜   |
+|  18 | —                          | —                                                                                        |    ⬜   |
+|  19 | —                          | —                                                                                        |    ⬜   |
+|  20 | —                          | —                                                                                        |    ⬜   |
+|  21 | —                          | —                                                                                        |    ⬜   |
+|  22 | —                          | —                                                                                        |    ⬜   |
+|  23 | —                          | —                                                                                        |    ⬜   |
+|  24 | —                          | —                                                                                        |    ⬜   |
+|  25 | —                          | —                                                                                        |    ⬜   |
+|  26 | —                          | —                                                                                        |    ⬜   |
+|  27 | —                          | —                                                                                        |    ⬜   |
+|  28 | —                          | —                                                                                        |    ⬜   |
+|  29 | —                          | —                                                                                        |    ⬜   |
+|  30 | —                          | —                                                                                        |    ⬜   |
 
-## 🗓️ 30-Day Plan
+> **Current progress: 7 / 30 days**
 
-The challenge will be split between **building projects, improving existing projects, and creating smaller experiments**.
+---
+
+# 🗓️ 30-Day Plan
+
+The challenge will be split between **building new projects, improving existing projects, and creating smaller experiments**.
 
 The aim is to make every day's contribution meaningful while keeping the challenge interesting.
 
-### Week 1 — Start Strong
+## Week 1 — Start Strong
 
 **Days 1–7**
 
-* Set up the #30GreenSquares repository
+* Set up the **#30GreenSquares** repository
 * Improve this README
 * Create or improve a small project
-* Work on **Spacebar Clicker**
-* Add a new feature or improve its interface
-* Start **Joogle Tools**
-* Build a small utility or experiment
+* Build **Spacebar Clicker**
+* Add features and improvements to existing projects
+* Start **Joogle Music**
+* Experiment with new ideas and tools
 
 **Goal:** Establish the daily habit and get several projects moving.
 
-### Week 2 — Build
+---
+
+## Week 2 — Build
 
 **Days 8–14**
 
-* Continue developing **Spacebar Clicker**
-* Add new gameplay features
-* Build more tools for **Joogle Tools**
+* Continue developing existing projects
+* Add new features
+* Build more tools and utilities
 * Experiment with JavaScript
 * Improve project documentation
 * Create a small standalone project
@@ -84,7 +96,9 @@ The aim is to make every day's contribution meaningful while keeping the challen
 
 **Goal:** Have several projects that are noticeably more developed than when the challenge started.
 
-### Week 3 — Experiment
+---
+
+## Week 3 — Experiment
 
 **Days 15–21**
 
@@ -98,7 +112,9 @@ The aim is to make every day's contribution meaningful while keeping the challen
 
 **Goal:** Learn something new while continuing to build.
 
-### Week 4 — Polish
+---
+
+## Week 4 — Polish
 
 **Days 22–28**
 
@@ -110,11 +126,13 @@ The aim is to make every day's contribution meaningful while keeping the challen
 * Polish project interfaces
 * Create one final mini-project or experiment
 
-**Goal:** Turn the projects from experiments into things I'm actually proud of.
+**Goal:** Turn experiments into projects I'm actually proud of.
 
-### Final 2 Days — Finish
+---
 
-**Day 29**
+# 🏁 Final Two Days
+
+## Day 29 — Review
 
 * Review all projects
 * Clean up repositories
@@ -122,7 +140,7 @@ The aim is to make every day's contribution meaningful while keeping the challen
 * Update project descriptions
 * Make sure unfinished work is clearly documented
 
-**Day 30**
+## Day 30 — Finish
 
 * Complete the final contribution
 * Update the progress table
@@ -130,35 +148,45 @@ The aim is to make every day's contribution meaningful while keeping the challen
 * Record what I learned
 * Decide which projects I want to continue
 
-**Goal:** Finish with 30 consecutive days of meaningful contributions.
+**Goal:** Finish with 30 days of meaningful contributions.
 
-## 🚀 Projects
+---
+
+# 🚀 Projects
 
 Some of the projects I may work on during the challenge:
 
-* **Spacebar Clicker** — A browser-based clicking game
-* **Joogle Tools** — A collection of useful web utilities
-* **Joogle Dashboard** — A personal dashboard
-* **Mini Projects** — Small experiments and one-off projects
+| Project              | Description                             |
+| -------------------- | --------------------------------------- |
+| **Spacebar Clicker** | A browser-based clicking game           |
+| **Joogle Music**     | A personal web-based music project      |
+| **Joogle Musicx**    | An experimental version of Joogle Music |
+| **Joogle Tools**     | A collection of useful web utilities    |
+| **Joogle Dashboard** | A personal dashboard                    |
+| **Mini Projects**    | Small experiments and one-off projects  |
 
 Projects may change throughout the challenge as new ideas come up.
 
-## 🛠️ Technologies
+---
+
+# 🛠️ Technologies
 
 Technologies I may use during the challenge include:
 
-* HTML
-* CSS
-* JavaScript
-* Python
-* Flask
-* Firebase
-* Git
-* GitHub
+* **HTML**
+* **CSS**
+* **JavaScript**
+* **Python**
+* **Flask**
+* **Firebase**
+* **Git**
+* **GitHub**
 
-I may also learn and experiment with new technologies during the challenge.
+I may also learn and experiment with new technologies throughout the challenge.
 
-## 📈 The Rules
+---
+
+# 📈 The Rules
 
 1. Make at least one meaningful contribution each day.
 2. Contributions must represent actual work.
@@ -166,9 +194,11 @@ I may also learn and experiment with new technologies during the challenge.
 4. Missing a day doesn't mean the challenge is over — keep going.
 5. Try to learn or build something new whenever possible.
 6. Projects and plans can change as new ideas come up.
-7. Have fun!
+7. Most importantly, **have fun building!**
 
-## 🏁 Final Goal
+---
+
+# 🏆 Final Goal
 
 At the end of the 30 days, I'll look back at:
 
@@ -178,9 +208,9 @@ At the end of the 30 days, I'll look back at:
 * Which projects I want to continue
 * How my GitHub contribution graph changed
 
-**Day 1 → Day 30**
+### Day 1 → Day 30
 
-Let's see how green we can make it.
+> **Let's see how green we can make it.**
 
 ---
 
