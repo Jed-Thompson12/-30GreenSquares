@@ -1,0 +1,1114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joogle Music</title>
+
+<style>
+:root{
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  color-scheme:dark;
+  --bg:#08090c;
+  --panel:#101218;
+  --panel2:#171922;
+  --line:#272b36;
+  --text:#f5f7fb;
+  --muted:#9da3b2;
+  --accent:#7c5cff;
+  --accent2:#a78bfa
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  height:100vh;
+  overflow:hidden
+}
+
+button,input{
+  font:inherit
+}
+
+button{
+  border:0;
+  color:inherit;
+  background:none;
+  cursor:pointer
+}
+
+.app{
+  height:100vh;
+  display:grid;
+  grid-template-columns:230px 1fr;
+  grid-template-rows:1fr 92px;
+  background:var(--bg)
+}
+
+aside{
+  grid-row:1/2;
+  padding:24px 16px;
+  border-right:1px solid var(--line);
+  background:#0b0c10
+}
+
+.brand{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:-1px;
+  padding:0 12px 28px
+}
+
+.brand span{
+  color:var(--accent2)
+}
+
+nav button{
+  width:100%;
+  text-align:left;
+  padding:12px;
+  border-radius:10px;
+  color:var(--muted);
+  margin:3px 0
+}
+
+nav button:hover,
+nav button.active{
+  background:var(--panel2);
+  color:var(--text)
+}
+
+.side-title{
+  font-size:11px;
+  text-transform:uppercase;
+  color:#6f7584;
+  margin:28px 12px 8px;
+  letter-spacing:1px
+}
+
+.playlist{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
+}
+
+main{
+  overflow:auto;
+  padding:28px 34px 120px
+}
+
+.top{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:28px
+}
+
+.search{
+  flex:1;
+  max-width:650px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:12px 16px;
+  color:var(--text);
+  outline:none
+}
+
+.search:focus{
+  border-color:var(--accent)
+}
+
+.hero{
+  background:linear-gradient(135deg,#1a1532,#101218 70%);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  margin-bottom:28px
+}
+
+.hero h1{
+  font-size:38px;
+  margin:0 0 8px;
+  letter-spacing:-1.5px
+}
+
+.hero p{
+  color:var(--muted);
+  margin:0
+}
+
+.primary{
+  background:var(--text);
+  color:#0b0c10;
+  padding:11px 17px;
+  border-radius:999px;
+  font-weight:700
+}
+
+.section{
+  margin-top:28px
+}
+
+.section h2{
+  font-size:19px;
+  margin:0 0 14px
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(175px,1fr));
+  gap:16px
+}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:13px;
+  transition:.15s
+}
+
+.card:hover{
+  transform:translateY(-2px);
+  background:var(--panel2)
+}
+
+.cover{
+  aspect-ratio:1;
+  border-radius:10px;
+  background:linear-gradient(135deg,#30265e,#171922);
+  display:grid;
+  place-items:center;
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:12px
+}
+
+.card-title{
+  font-weight:700;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
+}
+
+.artist{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:4px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
+}
+
+.card-actions{
+  display:flex;
+  gap:6px;
+  margin-top:10px
+}
+
+.small{
+  padding:7px 9px;
+  border-radius:8px;
+  background:#20232d;
+  color:#cdd1dc
+}
+
+.small:hover{
+  background:#2a2e3a
+}
+
+.empty{
+  padding:45px;
+  text-align:center;
+  color:var(--muted);
+  border:1px dashed var(--line);
+  border-radius:16px
+}
+
+.player{
+  grid-column:1/3;
+  display:grid;
+  grid-template-columns:260px 1fr 260px;
+  align-items:center;
+  gap:20px;
+  padding:12px 22px;
+  background:#0d0f14;
+  border-top:1px solid var(--line);
+  z-index:5
+}
+
+.now{
+  min-width:0
+}
+
+.now strong,
+.now span{
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis
+}
+
+.now span{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:3px
+}
+
+.controls{
+  text-align:center
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  align-items:center
+}
+
+.ctrl{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:#1b1e27
+}
+
+.play{
+  width:44px;
+  height:44px;
+  background:var(--text);
+  color:#0b0c10
+}
+
+.progress{
+  width:100%;
+  margin-top:7px
+}
+
+.right{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px
+}
+
+.volume{
+  width:110px
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:#0009;
+  display:none;
+  place-items:center;
+  z-index:20
+}
+
+.modal.show{
+  display:grid
+}
+
+.dialog{
+  width:min(520px,92vw);
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px
+}
+
+.dialog h2{
+  margin-top:0
+}
+
+.dialog input{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  background:#0c0e13;
+  border:1px solid var(--line);
+  color:var(--text);
+  margin:7px 0 14px
+}
+
+.dialog-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:8px
+}
+
+.file{
+  display:none
+}
+
+@media(max-width:800px){
+  .app{
+    grid-template-columns:70px 1fr
+  }
+
+  .brand{
+    font-size:0
+  }
+
+  .brand span{
+    font-size:22px
+  }
+
+  .side-title,
+  .playlist{
+    display:none
+  }
+
+  nav button{
+    font-size:0;
+    text-align:center
+  }
+
+  nav button:first-letter{
+    font-size:18px
+  }
+
+  main{
+    padding:20px
+  }
+
+  .hero{
+    padding:22px
+  }
+
+  .hero h1{
+    font-size:28px
+  }
+
+  .player{
+    grid-template-columns:1fr 1.3fr
+  }
+
+  .right{
+    display:none
+  }
+
+  .now{
+    display:none
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <aside>
+    <div class="brand">
+      Joogle <span>Music</span>
+    </div>
+
+    <nav>
+      <button class="active" data-view="home">⌂ &nbsp; Home</button>
+      <button data-view="library">♫ &nbsp; Library</button>
+      <button data-view="favorites">♥ &nbsp; Favourites</button>
+      <button data-view="queue">☷ &nbsp; Queue</button>
+    </nav>
+
+    <div class="side-title">Playlists</div>
+
+    <div id="playlistSide"></div>
+
+    <button id="newPlaylist" class="small" style="margin:16px 10px">
+      ＋ New playlist
+    </button>
+  </aside>
+
+
+  <main>
+
+    <div class="top">
+
+      <input
+        id="search"
+        class="search"
+        placeholder="Search your music…"
+      >
+
+      <button id="uploadBtn" class="primary">
+        ＋ Add music
+      </button>
+
+      <input
+        id="fileInput"
+        class="file"
+        type="file"
+        accept="audio/*"
+        multiple
+      >
+
+    </div>
+
+    <section id="content"></section>
+
+  </main>
+
+
+  <div class="player">
+
+    <div class="now">
+      <strong id="nowTitle">Nothing playing</strong>
+      <span id="nowArtist">Add music to get started</span>
+    </div>
+
+    <div class="controls">
+
+      <div class="buttons">
+
+        <button class="ctrl" id="shuffle">⤨</button>
+
+        <button class="ctrl" id="prev">⏮</button>
+
+        <button class="ctrl play" id="play">▶</button>
+
+        <button class="ctrl" id="next">⏭</button>
+
+        <button class="ctrl" id="repeat">↻</button>
+
+      </div>
+
+      <input
+        class="progress"
+        id="progress"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+      >
+
+    </div>
+
+    <div class="right">
+      🔊
+      <input
+        class="volume"
+        id="volume"
+        type="range"
+        min="0"
+        max="1"
+        step=".01"
+        value=".8"
+      >
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="modal" id="modal">
+
+  <div class="dialog">
+
+    <h2>New playlist</h2>
+
+    <input
+      id="playlistName"
+      placeholder="Playlist name"
+    >
+
+    <div class="dialog-actions">
+
+      <button class="small" id="cancel">
+        Cancel
+      </button>
+
+      <button class="primary" id="create">
+        Create
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<audio id="audio"></audio>
+
+
+<script>
+
+const $ = s => document.querySelector(s);
+
+const audio = $('#audio');
+
+let songs =
+  JSON.parse(localStorage.getItem('joogleSongs') || '[]');
+
+let playlists =
+  JSON.parse(localStorage.getItem('jooglePlaylists') || '[]');
+
+let current = -1;
+let queue = [];
+let view = 'home';
+let shuffle = false;
+let repeat = false;
+
+
+function save(){
+
+  localStorage.setItem(
+    'joogleSongs',
+    JSON.stringify(songs)
+  );
+
+  localStorage.setItem(
+    'jooglePlaylists',
+    JSON.stringify(playlists)
+  );
+
+}
+
+
+function esc(x){
+
+  return String(x).replace(
+    /[&<>"']/g,
+    c => ({
+      '&':'&amp;',
+      '<':'&lt;',
+      '>':'&gt;',
+      '"':'&quot;',
+      "'":'&#39;'
+    }[c])
+  );
+
+}
+
+
+function render(){
+
+  let q = $('#search').value.toLowerCase();
+
+  let list = songs.filter(s =>
+    (s.title + ' ' + s.artist + ' ' + s.album)
+      .toLowerCase()
+      .includes(q)
+  );
+
+  let title =
+    view === 'favorites'
+      ? 'Favourites'
+      : view === 'library'
+        ? 'Your Library'
+        : view === 'queue'
+          ? 'Queue'
+          : 'Welcome to Joogle Music';
+
+
+  if(view === 'favorites')
+    list = list.filter(s => s.favorite);
+
+
+  if(view === 'queue')
+    list = queue
+      .map(i => songs[i])
+      .filter(Boolean);
+
+
+  $('#content').innerHTML = `
+
+    <div class="hero">
+
+      <div>
+
+        <h1>${title}</h1>
+
+        <p>
+          ${
+            songs.length
+              ? `${songs.length} track${songs.length === 1 ? '' : 's'} in your library.`
+              : 'Your personal music player.'
+          }
+        </p>
+
+      </div>
+
+      <button
+        class="primary"
+        onclick="${
+          list.length
+            ? 'playSong(' + songs.indexOf(list[0]) + ')'
+            : "document.querySelector('#fileInput').click()"
+        }"
+      >
+        ${list.length ? '▶ Play' : 'Add your first song'}
+      </button>
+
+    </div>
+
+
+    <div class="section">
+
+      <h2>
+        ${view === 'home' ? 'Recently added' : title}
+      </h2>
+
+      ${
+        list.length
+          ? '<div class="grid">' +
+            list.map(
+              s => card(s, songs.indexOf(s))
+            ).join('') +
+            '</div>'
+
+          : `
+            <div class="empty">
+
+              No music here yet.
+
+              <br><br>
+
+              <button
+                class="primary"
+                onclick="document.querySelector('#fileInput').click()"
+              >
+                Add music
+              </button>
+
+            </div>
+          `
+      }
+
+    </div>
+
+  `;
+
+  renderSide();
+
+}
+
+
+function card(s, i){
+
+  return `
+
+    <div class="card">
+
+      <div class="cover">
+        ${esc((s.title || '?')[0].toUpperCase())}
+      </div>
+
+      <div class="card-title">
+        ${esc(s.title)}
+      </div>
+
+      <div class="artist">
+        ${esc(s.artist || 'Unknown artist')}
+      </div>
+
+      <div class="card-actions">
+
+        <button
+          class="small"
+          onclick="playSong(${i})"
+        >
+          ▶ Play
+        </button>
+
+        <button
+          class="small"
+          onclick="toggleFav(${i})"
+        >
+          ${s.favorite ? '♥' : '♡'}
+        </button>
+
+        <button
+          class="small"
+          onclick="addQueue(${i})"
+        >
+          ＋ Queue
+        </button>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+function renderSide(){
+
+  $('#playlistSide').innerHTML =
+    playlists.map(
+      (p, i) => `
+        <button
+          class="playlist"
+          onclick="openPlaylist(${i})"
+        >
+          ♫ &nbsp;${esc(p.name)}
+        </button>
+      `
+    ).join('');
+
+}
+
+
+function playSong(i){
+
+  if(!songs[i]) return;
+
+  current = i;
+
+  audio.src = songs[i].url;
+
+  audio.play();
+
+  updatePlayer();
+
+}
+
+
+function updatePlayer(){
+
+  let s = songs[current];
+
+  $('#nowTitle').textContent =
+    s ? s.title : 'Nothing playing';
+
+  $('#nowArtist').textContent =
+    s
+      ? (s.artist || 'Unknown artist')
+      : 'Add music to get started';
+
+  $('#play').textContent =
+    audio.paused ? '▶' : 'Ⅱ';
+
+}
+
+
+function next(){
+
+  if(!songs.length) return;
+
+  let n;
+
+  if(shuffle){
+
+    n = Math.floor(
+      Math.random() * songs.length
+    );
+
+  }else{
+
+    n = (current + 1) % songs.length;
+
+  }
+
+  playSong(n);
+
+}
+
+
+function prev(){
+
+  if(audio.currentTime > 3){
+
+    audio.currentTime = 0;
+
+    return;
+
+  }
+
+  playSong(
+    (current - 1 + songs.length) %
+    songs.length
+  );
+
+}
+
+
+function toggleFav(i){
+
+  songs[i].favorite =
+    !songs[i].favorite;
+
+  save();
+
+  render();
+
+}
+
+
+function addQueue(i){
+
+  queue.push(i);
+
+  render();
+
+}
+
+
+function openPlaylist(i){
+
+  view = 'playlist';
+
+  let p = playlists[i];
+
+  let list =
+    p.songs
+      .map(x => songs[x])
+      .filter(Boolean);
+
+  $('#content').innerHTML = `
+
+    <div class="hero">
+
+      <div>
+
+        <h1>${esc(p.name)}</h1>
+
+        <p>${list.length} tracks</p>
+
+      </div>
+
+      <button
+        class="primary"
+        onclick="${
+          list.length
+            ? 'playSong(' + songs.indexOf(list[0]) + ')'
+            : 'return false'
+        }"
+      >
+        ▶ Play
+      </button>
+
+    </div>
+
+    <div class="grid">
+
+      ${list
+        .map(
+          s => card(s, songs.indexOf(s))
+        )
+        .join('')}
+
+    </div>
+
+  `;
+
+}
+
+
+$('#uploadBtn').onclick =
+  () => $('#fileInput').click();
+
+
+$('#fileInput').onchange = e => {
+
+  [...e.target.files].forEach(f => {
+
+    let u =
+      URL.createObjectURL(f);
+
+    songs.push({
+
+      title:
+        f.name.replace(
+          /\.[^/.]+$/,
+          ''
+        ),
+
+      artist:
+        'Local file',
+
+      album:
+        '',
+
+      url:
+        u,
+
+      favorite:
+        false
+
+    });
+
+  });
+
+  save();
+
+  render();
+
+  e.target.value = '';
+
+};
+
+
+$('#play').onclick = () => {
+
+  if(current < 0 && songs.length){
+
+    playSong(0);
+
+  }else{
+
+    audio.paused
+      ? audio.play()
+      : audio.pause();
+
+  }
+
+  updatePlayer();
+
+};
+
+
+$('#next').onclick = next;
+
+$('#prev').onclick = prev;
+
+
+$('#shuffle').onclick = () => {
+
+  shuffle = !shuffle;
+
+  $('#shuffle').style.opacity =
+    shuffle ? 1 : .55;
+
+};
+
+
+$('#repeat').onclick = () => {
+
+  repeat = !repeat;
+
+  $('#repeat').style.opacity =
+    repeat ? 1 : .55;
+
+};
+
+
+audio.onended = () =>
+  repeat
+    ? playSong(current)
+    : next();
+
+
+audio.ontimeupdate = () => {
+
+  $('#progress').value =
+    audio.duration
+      ? audio.currentTime /
+        audio.duration * 100
+      : 0;
+
+};
+
+
+$('#progress').oninput = e => {
+
+  if(audio.duration){
+
+    audio.currentTime =
+      e.target.value / 100 *
+      audio.duration;
+
+  }
+
+};
+
+
+$('#volume').oninput = e => {
+
+  audio.volume =
+    e.target.value;
+
+};
+
+
+audio.volume = .8;
+
+
+$('#search').oninput =
+  render;
+
+
+document
+  .querySelectorAll('nav button')
+  .forEach(b => {
+
+    b.onclick = () => {
+
+      view = b.dataset.view;
+
+      document
+        .querySelectorAll('nav button')
+        .forEach(x =>
+          x.classList.remove('active')
+        );
+
+      b.classList.add('active');
+
+      render();
+
+    };
+
+  });
+
+
+$('#newPlaylist').onclick = () =>
+  $('#modal').classList.add('show');
+
+
+$('#cancel').onclick = () =>
+  $('#modal').classList.remove('show');
+
+
+$('#create').onclick = () => {
+
+  let n =
+    $('#playlistName')
+      .value
+      .trim();
+
+  if(!n) return;
+
+  playlists.push({
+
+    name:n,
+
+    songs:[]
+
+  });
+
+  save();
+
+  $('#playlistName').value = '';
+
+  $('#modal').classList.remove('show');
+
+  render();
+
+};
+
+
+window.playSong = playSong;
+window.toggleFav = toggleFav;
+window.addQueue = addQueue;
+window.openPlaylist = openPlaylist;
+
+
+render();
+
+</script>
+
+</body>
+</html>
