@@ -29,9 +29,9 @@ The goal isn't just to make my contribution graph green. It's about **building p
 |   2 | **README**                 | Improved and formatted the README                                                        |   🟢   |
 |   3 | **Daily Dashboard**        | Created a daily briefing dashboard with Claude                                           |   🟢   |
 |   4 | **Spacebar Clicker**       | Created the Spacebar Clicker game                                                        |   🟢   |
-|   5 | **Super Spacebar Clicker** | Refactored Spacebar Clicker and improved its title, styling, layout, and visual elements |   🟢   |
-|   6 | **Joogle Music**           | Created Joogle Music                                                                     |   🟢   |
-|   7 | **Joogle Musicx**          | Created Joogle Musicx                                                                    |   🟢   |
+|   4.5 | **Super Spacebar Clicker** | Refactored Spacebar Clicker and improved its title, styling, layout, and visual elements |   🟢   |
+|   5 | **Joogle Music**           | Created Joogle Music                                                                     |   🟢   |
+|   5.5 | **Joogle Musicx**          | Created Joogle Musicx                                                                    |   🟢   |
 |   8 | —                          | —                                                                                        |    ⬜   |
 |   9 | —                          | —                                                                                        |    ⬜   |
 |  10 | —                          | —                                                                                        |    ⬜   |
