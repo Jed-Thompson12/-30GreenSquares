@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#131314">
+<title>Joogle Musicx</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <a class="logo" href="#/home" aria-label="Joogle Musicx home">
+      <span class="mark"><i data-ic="music"></i></span>
+      <span class="word"><b class="c1">J</b><b class="c2">o</b><b class="c3">o</b><b class="c1">g</b><b class="c4">l</b><b class="c2">e</b></span>
+      <span class="sub">Musicx</span>
+    </a>
+    <label class="search">
+      <i data-ic="search"></i>
+      <input id="q" type="search" placeholder="Search songs, artists, albums, genres" autocomplete="off" spellcheck="false">
+      <kbd>/</kbd>
+    </label>
+    <div class="top-actions">
+      <button class="pill primary" data-act="upload" title="Upload songs"><i data-ic="upload"></i><span>Upload</span></button>
+      <button class="iconbtn hide-sm" data-act="uploadFolder" title="Upload a whole folder"><i data-ic="folder"></i></button>
+      <button class="iconbtn hide-sm" data-act="help" title="Keyboard shortcuts (?)"><i data-ic="keyboard"></i></button>
+    </div>
+    <input type="file" id="fileIn" accept="audio/*,.mp3,.flac,.m4a,.aac,.wav,.ogg,.opus,.aiff,.aif" multiple hidden>
+    <input type="file" id="dirIn" webkitdirectory multiple hidden>
+  </header>
+
+  <nav class="side" id="side" aria-label="Library"></nav>
+
+  <main id="main"><div id="view"></div></main>
+
+  <aside id="queue" aria-label="Queue"></aside>
+
+  <footer class="player" id="player">
+    <div class="pl-seek-mobile"><div id="mSeekFill"></div></div>
+    <div class="pl-left">
+      <button class="pl-art" data-act="openNP" id="plArt" title="Open now playing"></button>
+      <div class="pl-meta" data-act="openNP">
+        <div class="pl-title" id="plTitle">Nothing playing</div>
+        <div class="pl-artist" id="plArtist">Upload some songs to get started</div>
+      </div>
+      <button class="iconbtn fav-btn" data-act="favCur" id="plFav" title="Favourite (L)"><i data-ic="heartO"></i></button>
+    </div>
+    <div class="pl-center">
+      <div class="pl-ctrls">
+        <button class="iconbtn sm hide-sm" data-act="shuffle" id="btnShuffle" title="Shuffle (S)"><i data-ic="shuffle"></i></button>
+        <button class="iconbtn" data-act="prev" title="Previous (Shift+←)"><i data-ic="prev"></i></button>
+        <button class="playbtn" data-act="toggle" id="btnPlay" title="Play / pause (Space)"><i data-ic="play"></i></button>
+        <button class="iconbtn" data-act="next" title="Next (Shift+→)"><i data-ic="next"></i></button>
+        <button class="iconbtn sm hide-sm" data-act="repeat" id="btnRepeat" title="Repeat (R)"><i data-ic="repeat"></i></button>
+      </div>
+      <div class="pl-seek">
+        <span class="t" id="tCur">0:00</span>
+        <input type="range" id="seek" min="0" max="1000" value="0" step="1" aria-label="Seek">
+        <span class="t" id="tDur">0:00</span>
+      </div>
+    </div>
+    <div class="pl-right">
+      <button class="iconbtn sm" data-act="mute" id="btnMute" title="Mute (M)"><i data-ic="vol"></i></button>
+      <input type="range" id="vol" class="vol" min="0" max="100" value="80" aria-label="Volume">
+      <button class="iconbtn sm" data-act="dj" title="DJ deck (D)"><i data-ic="dj"></i></button>
+      <button class="iconbtn sm" data-act="queue" id="btnQueue" title="Queue (Q)"><i data-ic="queue"></i></button>
+    </div>
+  </footer>
+
+  <nav class="mnav" id="mnav" aria-label="Sections"></nav>
+
+  <div class="foot"><span id="storageInfo">Loading library…</span><span class="hint">Press <kbd>?</kbd> for shortcuts</span></div>
+</div>
+
+<div id="np" class="np" aria-hidden="true"></div>
+<div id="overlay"></div>
+<div id="menu" class="menu" role="menu"></div>
+<div id="toasts"></div>
+<div id="drop" class="drop"><div><i data-ic="upload"></i><p>Drop music to add it to your library</p></div></div>
+
+<script src="core.js"></script>
+<script src="ui.js"></script>
+<script src="player.js"></script>
+<script src="dj.js"></script>
+</body>
+</html>
