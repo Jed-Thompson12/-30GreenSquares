@@ -24,8 +24,8 @@ For 30 days, I'm challenging myself to make at least one **meaningful GitHub con
 |   3 | Daily Dashboard              | Created a Daily brief thing with Claude                               |    🟢   |
 |   4 | Spacebar Clicker             | Made a **Spacebar Clicker**                                |    🟢   |
 |   4.5 | Refactor Spacebar Clicker to Super Spacebar Clicker               | Updated the title and styles for the Spacebar Clicker game, enhancing the layout and visual elements.                                |    🟢   |
-|   6 | —               | —                                |    ⬜   |
-|   7 | —               | —                                |    ⬜   |
+|   5 | Joogle Music               | Created Joogle Music                                |    🟢   |
+|   5.5 | Joogle Musicx               | Created Joogle Musicx                                |    🟢   |
 |   8 | —               | —                                |    ⬜   |
 |   9 | —               | —                                |    ⬜   |
 |  10 | —               | —                                |    ⬜   |
