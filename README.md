@@ -32,8 +32,8 @@ The goal isn't just to make my contribution graph green. It's about **building p
 |   4.5 | **Super Spacebar Clicker** | Refactored Spacebar Clicker and improved its title, styling, layout, and visual elements |   🟢   |
 |   5 | **Joogle Music**           | Created Joogle Music                                                                     |   🟢   |
 |   5.5 | **Joogle Musicx**          | Created Joogle Musicx                                                                    |   🟢   |
-|   8 | —                          | —                                                                                        |    ⬜   |
-|   9 | —                          | —                                                                                        |    ⬜   |
+|   6 | **Started Prut**                          | Started making my own programing language                                                                                        |    🟢   |
+|   7 | **Continued Prut**                         | Kept working on Prut                                                                                       |    🟢   |
 |  10 | —                          | —                                                                                        |    ⬜   |
 |  11 | —                          | —                                                                                        |    ⬜   |
 |  12 | —                          | —                                                                                        |    ⬜   |
